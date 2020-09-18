@@ -1,0 +1,14 @@
+FROM python:latest
+
+LABEL maintainer="farooq@teqniqly.com"
+
+WORKDIR /src/usr/app/flask-hello-world
+
+COPY ./setup.py .
+COPY ./README.md .
+
+RUN pip install --no-cache-dir .
+
+COPY ./app.py .
+
+CMD ["python", "./app.py"]
